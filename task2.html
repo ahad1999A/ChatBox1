@@ -1,0 +1,75 @@
+
+<?php require 'task2.php' ?> 
+<!DOCTYPE html>
+
+<html>
+<html lang = "en" dir="1tr">
+
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="task2.css">
+<title>Control Panel</title>
+
+</head>
+
+<body style="background-color: black">
+
+
+<div class = "container">
+
+
+
+<fieldset class = "field_set">	
+
+<legend> <h1 style = "background-color: #296084 ;  color:white ; font-family: serif; "> Control Panel Robot </h1></legend>
+
+<p></p>
+
+<input style=" margin-right: 140px;margin-left: 140px;
+background-color: #97cef2 ; font-weight: bold;
+border:thick solid #659cc0 ; 
+" type="submit" value=" FORWARDS " name= forwards ><br><br>
+
+<input style=" margin-right: 20px;  margin-left: 20px;
+background-color: #97cef2 ; font-weight: bold;
+border:thick solid #659cc0 ; 
+" type="submit" value="       LEFT      " name= left > 
+
+
+ <input style="margin-right: 20px; margin-left: 7px; 
+ background-color: #3796ff;  font-weight: bold;
+ border:thick solid #659cc0 ; 
+ " type="submit" value=
+ "       STOP      " name=  stop >  
+
+<input  style="margin-right: 15px; margin-left: 10px;
+background-color: #97cef2 ; font-weight: bold;
+border:thick solid #659cc0 ; 
+ " type="submit" value="       RIGHT      " name= right><br><br>
+
+
+
+<input style=" margin-right: 140px; margin-left: 140px;
+background-color: #97cef2 ; font-weight: bold;
+border:thick solid #659cc0 ; 
+"type="submit"  value="BACKWARDS" name= backwards >
+
+</fieldset>
+
+</div>
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "1d5a997d-2fed-4ecc-9644-7f089b5bfae8", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "d925de54-fcf8-40c0-a865-531f49f8d60a", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+
+</html>
