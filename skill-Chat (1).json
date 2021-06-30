@@ -1,0 +1,247 @@
+{
+  "intents": [
+    {
+      "intent": "BeyMsg",
+      "examples": [
+        {
+          "text": "good bey"
+        },
+        {
+          "text": "i am happy to see you , bey"
+        },
+        {
+          "text": "see you soon , bey"
+        },
+        {
+          "text": "Thank you to you , good bey"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "HeyMsg",
+      "examples": [
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ThankU",
+      "examples": [
+        {
+          "text": "have a good day"
+        },
+        {
+          "text": "nice to meet you"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "Thanx"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1625077260207",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_4_1625076988402",
+      "event_name": "input",
+      "dialog_node": "handler_2_1625076988413"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1625076988402",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1625076988413",
+      "previous_sibling": "handler_2_1625076988413"
+    },
+    {
+      "type": "standard",
+      "title": "thank you",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're welcome "
+              },
+              {
+                "text": "Anytime "
+              },
+              {
+                "text": "Sure"
+              },
+              {
+                "text": "Glad to help"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ThankU",
+      "dialog_node": "node_10_1625076977763",
+      "previous_sibling": "node_2_1625076873836"
+    },
+    {
+      "type": "frame",
+      "title": "hello",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi , its a beautiful day smile please !"
+              },
+              {
+                "text": "Hello "
+              },
+              {
+                "text": "Hi"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#HeyMsg",
+      "dialog_node": "node_2_1625076873836",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "goodbey",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bey, smile too I be happy, please !"
+              },
+              {
+                "text": "Your message was quite moving. I love the feeling of being connected !"
+              },
+              {
+                "text": "It’s nice to receive such wonderful message. Thank you for the well wishes !"
+              },
+              {
+                "text": "Thank you so much for the message. I was really pleased !"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#BeyMsg",
+      "dialog_node": "node_4_1625077260207",
+      "previous_sibling": "node_10_1625076977763"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1625076873836",
+      "dialog_node": "slot_4_1625076988402"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Chat",
+  "language": "en",
+  "description": ""
+}
